@@ -4,7 +4,7 @@
 #+options: inline:t num:t p:nil pri:nil prop:nil stat:t tags:t
 #+options: tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
 
-#+title: Plantilla para Toma de Notas en Clase
+#+title: Notas en Clase
 #+subtitle: Buses del Sistema y Estructuras de Interconexión
 #+date: 2024-07-
 #+author: Samara Salazar
@@ -207,3 +207,4 @@ QPI permite una comunicación rápida, confiable y escalable.
 
 *** Resumen Final
 La evolución de los buses del sistema, desde buses compartidos hasta interconexiones punto a punto como QPI y PCI Express, ha permitido mejorar el rendimiento, la escalabilidad y la eficiencia de las arquitecturas de computadores modernas.
+
