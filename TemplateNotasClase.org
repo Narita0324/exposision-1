@@ -5,12 +5,11 @@
 #+options: tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
 #+title: Plantilla para Toma de Notas en Clase
 #+date: 2024-07-
-#+author: COLOQUE SU NOMBRE
-#+email: coloque.su.nombre@epn.edu.ec
+#+author: Samara Salazar
+#+email: luzsamara.salazar@epn.edu.ec
 #+language: Español
 #+select_tags: export
 #+exclude_tags: noexport
-#+creator: Emacs 27.1 (Org mode 9.7.5)
 #+cite_export: biblatex
 
 #+latex_class: article
@@ -46,71 +45,194 @@ ARQUITECTURA DE COMPUTADORES}
 
 
 #+begin_comment
-Este comentario contiene la estructura básica para toma de notas de
-acuerdo a la metodología explicada por la Universidad de Cornell.
-* 2024-xx-xx Título de la clase/charla
-** Preguntas y Términos clave (Cue):
-- término clave1 ::
-- término clave2 ::
-** Notas (Notes):
-- nota1
-- nota2
-  - subnota
-  - subnota
-- nota3
-  1. numerado
-  2. numerado
-** Resumen (Summary):
-Aquí se realiza un breve resumen
-#+end_comment
-* 2024-xx-xx Título de la clase/charla
-** Preguntas y Términos clave (Cue):
-- ¿qué es el sistema de notas de U. Cornell? ::
-- TODO :: ????
-** Notas (Notes):
-- Sistema eficiente de toma de apuntes
-- Divide la hoja en tres secciones:
-  1. *Sección para preguntas*: apuntar todo lo que no se entiende o la
-     pregunta que surge de la charla
-  2. *Sección para notas: se coloca las notas normales. Aquí podemos
-     explotar Emacs y Programación literaria para incluir código de programación
-  3. *Resumen*: Una vez terminada la clase, en una fase posterior y
-     usando las notas tomadas, y resolviendo las inquietudes, se
-     escribe un resumen de la clase.
-- Emacs se puede usar para facilitar esta tarea dividiendo la pantalla mediante:
-  - Horizontal: ~C-x 2~
-  - Vertical: ~C-x 3~
-  - Cambiar de ventana ~C-x o~
-  - Cerrar una ventana que ya no quiero ~C-x 0~
-  - Cerrar todas las demás ventanas excepto en la que el cursor está ~C-x 1~
-- Una desventaja de Emacs es que no podemos graficar en la pantalla
-- Una ventaja es que podemos escribir la notación matemática usando \LaTeX
-- Una ventaja es que podemos escribir el código de programación de
-  cualquier lenguaje de programación y testearlo directamente desde el archivo.
-  1. numerado
-  2. numerado
-- Emacs nos permite adicionar el ~TODO~ para marcar las tareas y
-  controlar cuáles ya están realizadas. Para esto generamos más
-  viñetas con el [ ]. Si la tarea ya está realizada podemos dar ~C-c
-  C-c~ en la línea y cambiar el estado de la tarea a realizada. Pruebe
-  en el ejemplo.
-** Enlaces de Interés
-- [[https://lsc.cornell.edu/how-to-study/taking-notes/cornell-note-taking-system/][Página web de Cornell University sobre Toma de Notas]]
-- [[https://youtu.be/nX-xshA_0m8?si=20MELdipZ1cjRh2f][YouTube]]
-** Resumen (Summary):
-Emacs ofrece una herramienta que nos permite combinar código y
-literatura así como aprovechar \LaTeX para escribir notación
-matemática. Mediante el uso de combinaciones de teclas se puede
-alternar entre distintas pantallas. Así por ejemplo, se puede dividir
-la pantalla en una región para apuntar las preguntas, otra para las
-notas y una tercera para el resumen. Algo que no incluye la estrategia
-de Cornell es apuntar las tareas. Pero esto lo podemos aprovechar con
-Emacs ~TODO~.
+* Tema: Buses del Sistema y Estructuras de Interconexión
+
+** 1. Estructuras de Interconexión
+
+*** Preguntas
+
+* ¿Por qué no es eficiente usar un único bus para todos los componentes?
+* ¿Qué limitaciones físicas aparecen cuando aumenta la frecuencia del bus?
+* ¿Cómo impacta la interconexión en el rendimiento global del sistema?
+
+*** Notas
+
+* Un computador está compuesto por tres módulos fundamentales:
+
+  * CPU (Procesador): ejecuta instrucciones y controla el funcionamiento.
+  * Memoria: almacena datos e instrucciones.
+  * Entrada/Salida (E/S): permite la comunicación con el exterior.
+* Analogías:
+
+  * CPU → cerebro
+  * Memoria → archivo
+  * E/S → teclado, pantalla, impresora
+* Estos módulos intercambian información mediante estructuras de interconexión.
+
+*** Resumen
+Las estructuras de interconexión permiten que CPU, memoria y E/S funcionen como un sistema integrado.
+
+** 2. Intercambio de Información
+
+*** Preguntas
+
+* ¿Quién inicia normalmente una transferencia de datos?
+* ¿Por qué el DMA mejora el rendimiento del sistema?
+
+*** Notas
+
+* CPU → Memoria: guarda resultados.
+* Memoria → CPU: lectura de instrucciones y datos.
+* CPU → E/S: salida a pantalla o impresora.
+* E/S → CPU: entrada desde teclado u otros dispositivos.
+* Memoria ↔ E/S: mediante DMA (Acceso Directo a Memoria).
+
+*** Resumen
+El intercambio de información define el flujo interno de datos; el DMA reduce la carga de la CPU.
+
+** 3. Interconexión con Buses
+
+*** Preguntas
+
+* ¿Por qué un bus es un medio compartido?
+
+*** Notas
+
+* Bus: camino de comunicación entre dispositivos.
+* Características:
+
+  * Medio compartido.
+  * Un solo transmisor a la vez.
+  * Formado por múltiples líneas.
+* El bus del sistema conecta CPU, memoria y E/S.
+
+*** Resumen
+El bus permite la comunicación interna, aunque con limitaciones de concurrencia.
+
+** 4. Definición y Función del Bus
+
+*** Preguntas
+
+* ¿Cuántas líneas suele tener un bus del sistema?
+
+*** Notas
+
+* Conjunto de 50 a 100 líneas metálicas independientes.
+* Canal único de transmisión.
+
+*** Resumen
+El bus es la base física y lógica de la comunicación del computador.
+
+** 5. Estructura del Bus
+
+*** Preguntas
+
+* ¿Qué función cumplen las líneas de control?
+
+*** Notas
+
+* Líneas de datos.
+* Líneas de dirección.
+* Líneas de control.
+* Líneas de alimentación.
+* Señales: Memory Read/Write, I/O Read/Write, Interrupt, Clock, Reset.
+
+*** Resumen
+La separación por tipos de líneas permite transferencias organizadas y seguras.
+
+** 6. Evolución del Bus
+
+*** Preguntas
+
+* ¿Por qué se integran los buses on-chip?
+
+*** Notas
+
+* Conductores en PCB.
+* Ranuras de expansión.
+* Evolución a integración on-board y on-chip.
+
+*** Resumen
+La evolución busca mayor velocidad y menor latencia.
+
+** 7. Jerarquía de Buses Múltiples
+
+*** Preguntas
+
+* ¿Qué problema resuelve la jerarquía de buses?
+
+*** Notas
+
+* Alta velocidad: CPU, caché, memoria.
+* Media velocidad: tarjetas y controladores.
+* Baja velocidad: periféricos.
+
+*** Resumen
+La jerarquía evita cuellos de botella y mejora el rendimiento.
+
+** 8. Elementos de Diseño de un Bus
+
+*** Preguntas
+
+* ¿Qué ventaja tienen los buses multiplexados?
+
+*** Notas
+
+* Líneas dedicadas y multiplexadas.
+* Arbitraje centralizado y distribuido.
+* Sincronización síncrona.
+* Ancho del bus de datos y direcciones.
+
+*** Resumen
+El diseño del bus determina su eficiencia y escalabilidad.
+
+** 9. Interconexión Punto a Punto
+
+*** Preguntas
+
+* ¿Por qué reemplaza a los buses compartidos?
+
+*** Notas
+
+* Menor latencia.
+* Mayor velocidad.
+* No requiere arbitraje.
+
+*** Resumen
+La interconexión punto a punto supera las limitaciones de los buses tradicionales.
+
+** 10. QPI (QuickPath Interconnect)
+
+*** Preguntas
+
+* ¿Por qué usar arquitectura en capas?
+
+*** Notas
+
+* Diseñado por Intel.
+* 6.4 GT/s.
+* 20 carriles por dirección.
+* Capas: física, enlace, enrutamiento y protocolo.
+
+*** Resumen
+QPI permite comunicación rápida y confiable en sistemas multinúcleo.
+
+** 11. PCI y PCI Express
+
+*** Preguntas
+
+* ¿Por qué PCIe reemplazó a PCI?
+
+*** Notas
+
+* PCI: estándar abierto.
+* PCIe:
+
+  * Punto a punto.
+  * Lanes bidireccionales.
+  * Codificación 128b/130b.
+
+*** Resumen Final
+Los buses del sistema han evolucionado desde esquemas compartidos hasta interconexiones punto a punto como QPI y PCIe, mejorando rendimiento, escalabilidad y eficiencia en las arquitecturas modernas.
 
 
-* TODO Mis Tareas [50%]
-- [X] Leer este documento
-- [ ] Escribir el resumen  de la exposición 1
-
-#+print_bibliography: 
- 
